@@ -1,0 +1,48 @@
+/* Modal styling */
+.modal {
+    display: block; /* Modal will be displayed immediately */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.modal video {
+    width: 100%;
+    height: auto;
+}
+
+.modal-buttons {
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+#yesButton {
+    background-color: green;
+    color: white;
+}
+
+#noButton {
+    background-color: red;
+    color: white;
+}
