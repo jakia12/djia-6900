@@ -3696,10 +3696,9 @@ img.road_img {
 }
 
 .heading-2 {
- 
 }
-.ttl{
-color: #fff;
+.ttl {
+  color: #fff;
   text-align: center;
   letter-spacing: 9px;
   -webkit-text-stroke-width: 3px;
@@ -3711,14 +3710,13 @@ color: #fff;
 }
 
 .div-block-19 {
-  background-image: url("/images/new-img.jpg");
+  background-image: url("/images/vid.gif");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: contain;
   padding-left: 145px;
   padding-right: 145px;
 }
-
 
 .heading-2 {
   color: #fff;
@@ -3729,5 +3727,4 @@ color: #fff;
   text-shadow: -4px 3px 4px #0c285e;
   font-family: Pokemon Solid, sans-serif;
   position: static;
-  
 }
