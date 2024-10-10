@@ -55,11 +55,11 @@
           </video>
           <p style="    font-family: cursive;
           font-size: large;
-      ">I'm holding DowJones6900 harder than my last brain cell during finals week—either I'm rich, or it's ramen forever!</p>
+      ">I'm holding DowJones6900 harder than my last brain cell!</p>
           <div class="modal-buttons">
               <button id="yesButton">Yes</button>
               <button id="noButton">No</button>
-              <button id="unmuteButton" style="display: none;">Unmute Video</button>
+             
           </div>
       </div>
   </div>
@@ -179,15 +179,14 @@
         <div class="div-block-3">
           <h1 class="heading-2">ABOUT US</h1>
           <p class="paragraph">
-            The Dow Jones Industrial Average (DJIA), often referred to simply as the Dow, is one of the oldest and most
-            well-known
-            stock market indexes in the world. It serves as a key indicator of the overall health and performance of the
-            stock
-            market and the broader economy, particularly in the United States. </p>
-          <p class="paragraph">The Dow is often used as a barometer of the U.S. stock market's performance. It reflects
-            investor sentiment and is
-            closely watched by financial professionals, economists, and individual investors to gauge the economic
-            outlook.!</p>
+            The Big Hold:
+
+            Financial anarchists are now flocking to the cult of DowJones6900, declaring it not just a number, but a way of life. Former crypto influencers, ex-day traders, and bored billionaires have united in their blind loyalty to this mystical figure. Some call it a "financial revolution," others just nod and say "numbers go brrr," but the truth is: DowJones6900 is more than a stock market index—it's a lifestyle choice for those who really, really enjoy ignoring risk.
+            
+            Rumors of DowJones6900 reaching meme-god status exploded after Elon Musk reportedly tweeted, "6900? Nice." The tweet, liked by millions of bots, instantly turned DowJones6900 into the chosen index. Conspiracies abound that Musk plans to launch the first rocket powered solely by the collective hope of DowJones6900 bagholders. Redditors, fueled by energy drinks and rage, are now laser-eyed, expecting the market to ride the DJ6900 wave straight past Mars—or straight to their mom’s basement. </p>
+          <p class="paragraph">At this point, it's no longer about financial strategy. It's about vibes. Tech bros, hedge fund mavericks, and that guy at the bar who always talks about NFTs are creating digital tribes around DowJones6900, swearing that its numerical greatness will unlock hidden powers of the global economy. There's talk of schools teaching "6900 Theory" as an economic religion, and one self-proclaimed "Wall Street shaman" insists that the number's cosmic alignment guarantees wealth—if you just believe hard enough.
+
+            But as they say, if it crashes, "we’re all gonna make it."</p>
           </p>
         </div>
 
@@ -206,7 +205,7 @@
         <h1 class="heading-2">TOKENOMICS</h1>
       </div>
       <div class="div-block-6">
-        <img src="/images/text.png" loading="lazy" width="472" sizes="(max-width: 479px) 100vw, 472px" alt="" />
+        <img src="/images/vid.gif" loading="lazy" width="472" style="width:400px;border-radius:15px" alt="" />
       </div>
       <div>
         <div class="div-block-7 token">
@@ -404,6 +403,33 @@
     type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
     crossorigin="anonymous"></script>
 </body>
+<script>
+  const video = document.getElementById("myVideo");
+const unmuteButton = document.getElementById("unmuteButton");
 
+// Try to autoplay with sound
+video.play().catch(error => {
+    // If autoplay with sound fails, show the "Unmute Video" button
+    unmuteButton.style.display = "inline";
+});
+
+// When "Unmute Video" is clicked, play the video with sound
+unmuteButton.addEventListener("click", function() {
+    video.muted = false;
+    video.play();
+    unmuteButton.style.display = "none"; // Hide the button after enabling sound
+});
+
+// When the "Yes" button is clicked, close the modal and proceed to the website
+document.getElementById("yesButton").addEventListener("click", function() {
+    document.getElementById("myModal").style.display = "none";
+});
+
+// When the "No" button is clicked, redirect to McDonald's website
+document.getElementById("noButton").addEventListener("click", function() {
+    window.location.href = "https://careers.mcdonalds.com/";
+});
+
+</script>
 <script src="script.js"></script>
 </html>
