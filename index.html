@@ -138,7 +138,7 @@
           align-items: center;
           justify-content: center;
         ">
-        <!-- <img src="/images/new.jpg" style="width: 400px; margin: 20px 0" alt="" /> -->
+        <!-- <img src="/images/new-img.jpg" style="width: 400px; margin: 20px 0" alt="" /> -->
         <video id="myVideo" width="100%" controls autoplay="">
           <source src="/DowJonesFinal.mp4" type="video/mp4">
           Your browser does not support the video tag.
@@ -146,7 +146,7 @@
       </div>
       <div class="flex_dis" style="display: flex; align-items: center; justify-content: center; margin-top: 15px;">
         <button id="yesButton">Yes</button>
-        <button id="noButton">No</button>
+        <a href="https://careers.mcdonalds.com/"><button id="noButton">No</button></a>
       </div>
     </div>
   </div>
@@ -163,14 +163,15 @@
 
         const yesButton = document.getElementById("yesButton");
         const noButton = document.getElementById("noButton");
+        const video = document.getElementById("videoplay")
 
         if (yesButton) {
           modal.style.display = "none";
-          closingAudio.play();
+          video.play();
         } else {
           if (noButton) {
             modal.style.display = "none";
-            closingAudio.play();
+            window.location.href = "https://careers.mcdonalds.com/";
           }
         }
 
@@ -232,7 +233,8 @@
   <section class="hero wf-section">
     <div class="div-block">
       <div class="div-block-13">
-        <img src="/images/mlogo.png" loading="lazy" width="1208" alt="" style="width:700px" class="image">
+        <!-- <img src="/images/mlogo.png" loading="lazy" width="1208" alt="" style="width:700px" class="image"> -->
+        <video id="videoplay" controls src="./DowJonesFinal.mp4"></video>
       </div>
       <div class="div-block-2">
         <img src="2.jpeg" loading="lazy" width="368" alt="" class="image-9">
