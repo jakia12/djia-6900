@@ -4,6 +4,68 @@
 <head>
   <meta charset="utf-8" />
   <title>Dow Jones Industrial Average Index</title>
+  <style type="text/css">
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 99999;
+      border-radius: 10px;
+    }
+
+    .mod_content {
+      background-color: #fbfbfc;
+      width: 400px;
+      margin: 100px auto;
+      padding: 40px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    /* Hide the modal when not displayed */
+    .hidden {
+      display: none;
+    }
+
+    #yesButton {
+      padding: 8px 28px;
+      margin-right: 15px;
+      outline: none;
+      border: none;
+      background-color: #fff420;
+      color: black;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    #noButton {
+      padding: 8px 28px;
+      outline: none;
+      border: none;
+      background-color: #fff420;
+      color: black;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    .faq_inner .card-header h4 button::before {
+      display: none !important;
+    }
+
+    @media screen and (max-width: 768px) {
+      .mod_content {
+        width: 95%;
+      }
+
+      .mob_space {
+        margin-top: 50px;
+      }
+    }
+  </style>
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <meta content="Webflow" name="generator" />
   <link href="main.css" rel="stylesheet" type="text/css" />
@@ -14,7 +76,7 @@
   <!-- bootstrap cdn -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<link rel="stylesheet" href="/modal.css">
+  <!-- <link rel="stylesheet" href="/modal.css"> -->
   <!-- bootsrap js -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -44,25 +106,86 @@
 </head>
 
 <body>
-     <!-- Modal Structure -->
+  <!-- Modal Structure -->
 
-    <!-- Modal Structure -->
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-          <video id="myVideo" width="100%" autoplay>
-              <source src="/DowJonesFinal.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-          </video>
-          <p style="    font-family: cursive;
+  <!-- Modal Structure -->
+  <!-- <div id="myModal" class="modal">
+    <div class="modal-content">
+      <video id="myVideo" width="100%" autoplay>
+        <source src="/DowJonesFinal.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p style="    font-family: cursive;
           font-size: large;
       ">I'm holding DowJones6900 harder than my last brain cell!</p>
-          <div class="modal-buttons">
-              <button id="yesButton">Yes</button>
-              <button id="noButton">No</button>
-             
-          </div>
+      <div class="modal-buttons">
+        <button id="yesButton">Yes</button>
+        <button id="noButton">No</button>
+
       </div>
+    </div>
+  </div> -->
+
+  <div id="myModal" class="modal">
+    <div class="mod_content" style="background-color: #d4d4d4">
+      <p style="color: black; font-size: 17px; font-weight: bold;">
+        I'm holding DowJones6900 harder than my last brain cell!
+      </p>
+      <div style="
+          text-align: center;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        ">
+        <!-- <img src="/images/new.jpg" style="width: 400px; margin: 20px 0" alt="" /> -->
+        <video id="myVideo" width="100%" autoplay>
+          <source src="/DowJonesFinal.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="flex_dis" style="display: flex; align-items: center; justify-content: center; margin-top: 15px;">
+        <button id="yesButton">Yes</button>
+        <button id="noButton">No</button>
+      </div>
+    </div>
   </div>
+  <audio style="opacity: 1" id="closingAudio" src="./images/music.mp3"></audio>
+  <script>
+    window.onload = function () {
+      var modal = document.getElementById("myModal");
+      modal.style.display = "block";
+
+      // Close the modal when clicking outside of it
+      window.onclick = function (event) {
+        var closeButton = document.getElementById("closeModal");
+        var closingAudio = document.getElementById("closingAudio");
+
+        const yesButton = document.getElementById("yesButton");
+        const noButton = document.getElementById("noButton");
+
+        if (yesButton) {
+          modal.style.display = "none";
+          closingAudio.play();
+        } else {
+          if (noButton) {
+            modal.style.display = "none";
+            closingAudio.play();
+          }
+        }
+
+        // yesButton.addEventListener("click", function () {
+        //   modal.style.display = "none";
+        //   closingAudio.play();
+        // });
+
+        // // Hide the modal when "No" is clicked
+        // noButton.addEventListener("click", function () {
+        //   modal.style.display = "none";
+        // });
+      };
+    };
+  </script>
 
 
 
@@ -177,14 +300,25 @@
       <div class="div-block-4">
         <div class="div-block-19"></div>
         <div class="div-block-3">
-          <h1 class="heading-2">ABOUT US</h1>
+          <h1 class="heading-2">
+            THE BIG HOLD</h1>
           <p class="paragraph">
-            The Big Hold:
+            Financial anarchists are now flocking to the cult of DowJones6900, declaring it not just a number, but a way
+            of life. Former crypto influencers, ex-day traders, and bored billionaires have united in their blind
+            loyalty to this mystical figure. Some call it a "financial revolution," others just nod and say "numbers go
+            brrr," but the truth is: DowJones6900 is more than a stock market index—it's a lifestyle choice for those
+            who really, really enjoy ignoring risk.
 
-            Financial anarchists are now flocking to the cult of DowJones6900, declaring it not just a number, but a way of life. Former crypto influencers, ex-day traders, and bored billionaires have united in their blind loyalty to this mystical figure. Some call it a "financial revolution," others just nod and say "numbers go brrr," but the truth is: DowJones6900 is more than a stock market index—it's a lifestyle choice for those who really, really enjoy ignoring risk.
-            
-            Rumors of DowJones6900 reaching meme-god status exploded after Elon Musk reportedly tweeted, "6900? Nice." The tweet, liked by millions of bots, instantly turned DowJones6900 into the chosen index. Conspiracies abound that Musk plans to launch the first rocket powered solely by the collective hope of DowJones6900 bagholders. Redditors, fueled by energy drinks and rage, are now laser-eyed, expecting the market to ride the DJ6900 wave straight past Mars—or straight to their mom’s basement. </p>
-          <p class="paragraph">At this point, it's no longer about financial strategy. It's about vibes. Tech bros, hedge fund mavericks, and that guy at the bar who always talks about NFTs are creating digital tribes around DowJones6900, swearing that its numerical greatness will unlock hidden powers of the global economy. There's talk of schools teaching "6900 Theory" as an economic religion, and one self-proclaimed "Wall Street shaman" insists that the number's cosmic alignment guarantees wealth—if you just believe hard enough.
+            Rumors of DowJones6900 reaching meme-god status exploded after Elon Musk reportedly tweeted, "6900? Nice."
+            The tweet, liked by millions of bots, instantly turned DowJones6900 into the chosen index. Conspiracies
+            abound that Musk plans to launch the first rocket powered solely by the collective hope of DowJones6900
+            bagholders. Redditors, fueled by energy drinks and rage, are now laser-eyed, expecting the market to ride
+            the DJ6900 wave straight past Mars—or straight to their mom’s basement. </p>
+          <p class="paragraph">At this point, it's no longer about financial strategy. It's about vibes. Tech bros,
+            hedge fund mavericks, and that guy at the bar who always talks about NFTs are creating digital tribes around
+            DowJones6900, swearing that its numerical greatness will unlock hidden powers of the global economy. There's
+            talk of schools teaching "6900 Theory" as an economic religion, and one self-proclaimed "Wall Street shaman"
+            insists that the number's cosmic alignment guarantees wealth—if you just believe hard enough.
 
             But as they say, if it crashes, "we’re all gonna make it."</p>
           </p>
@@ -405,31 +539,34 @@
 </body>
 <script>
   const video = document.getElementById("myVideo");
-const unmuteButton = document.getElementById("unmuteButton");
+  const unmuteButton = document.getElementById("unmuteButton");
 
-// Try to autoplay with sound
-video.play().catch(error => {
+  // Try to autoplay with sound
+  video.play().catch(error => {
     // If autoplay with sound fails, show the "Unmute Video" button
     unmuteButton.style.display = "inline";
-});
+  });
 
-// When "Unmute Video" is clicked, play the video with sound
-unmuteButton.addEventListener("click", function() {
+  // When "Unmute Video" is clicked, play the video with sound
+  unmuteButton.addEventListener("click", function () {
     video.muted = false;
     video.play();
     unmuteButton.style.display = "none"; // Hide the button after enabling sound
-});
+  });
 
-// When the "Yes" button is clicked, close the modal and proceed to the website
-document.getElementById("yesButton").addEventListener("click", function() {
-    document.getElementById("myModal").style.display = "none";
-});
+  // When the "Yes" button is clicked, close the modal and proceed to the website
+  // document.getElementById("yesButton").addEventListener("click", function () {
+  //   document.getElementById("myModal").style.display = "none";
+  //   window.location.href = "/"; // Redirect to the root file (index.html)
+  // });
 
-// When the "No" button is clicked, redirect to McDonald's website
-document.getElementById("noButton").addEventListener("click", function() {
-    window.location.href = "https://careers.mcdonalds.com/";
-});
+
+  // When the "No" button is clicked, redirect to McDonald's website
+  // document.getElementById("noButton").addEventListener("click", function () {
+  //   window.location.href = "/";
+  // });
 
 </script>
 <script src="script.js"></script>
+
 </html>
